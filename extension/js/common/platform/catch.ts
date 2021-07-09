@@ -76,7 +76,7 @@ export class Catch {
     if (exception !== originalErr) {
       console.error(exception);
     }
-    console.log(`%c[${exception.message}]\n${exception.stack}`, 'color: #F00; font-weight: bold;');
+    console.error(exception.message + '\n' + exception.stack);
     if (isManuallyCalled !== true && Catch.ORIG_ONERROR && Catch.ORIG_ONERROR !== (Catch.onErrorInternalHandler as OnErrorEventHandler)) {
       // @ts-ignore
       Catch.ORIG_ONERROR.apply(undefined, arguments); // Call any previously assigned handler
