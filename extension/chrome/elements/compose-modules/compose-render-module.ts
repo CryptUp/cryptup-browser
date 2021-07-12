@@ -62,6 +62,12 @@ export class ComposeRenderModule extends ViewModule<ComposeView> {
     this.view.sendBtnModule.resetSendBtn();
     await this.view.sendBtnModule.popover.render();
     this.loadRecipientsThenSetTestStateReady().catch(Catch.reportErr);
+
+    console.log(`➕ added test_action listener in compose-render-module.ts, tabId: ${this.view.parentTabId}`);
+    BrowserMsg.addListener('test_action', async () => {
+      console.log('✔️ caught in compose-render-module.ts');
+    });
+    BrowserMsg.listen(this.view.parentTabId);
   }
 
   public renderReplyMsgComposeTable = async (): Promise<void> => {

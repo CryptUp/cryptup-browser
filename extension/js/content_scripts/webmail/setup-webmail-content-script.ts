@@ -165,6 +165,11 @@ export const contentScriptSetupIfVacant = async (webmailSpecific: WebmailSpecifi
       await Ui.modal.attachmentPreview(iframeUrl);
     });
 
+    console.log(`➕ added test_action listener in setup-webmail-content-script.ts, tabId: ${tabId}`);
+    BrowserMsg.addListener('test_action', async () => {
+      console.log('✔️ caught in setup-webmail-content-script.ts');
+    });
+
     BrowserMsg.listen(tabId);
   };
 

@@ -184,6 +184,7 @@ export class BrowserMsg {
     addToContacts: (dest: Bm.Dest) => BrowserMsg.sendCatch(dest, 'addToContacts', {}),
     reRenderRecipient: (dest: Bm.Dest, bm: Bm.ReRenderRecipient) => BrowserMsg.sendCatch(dest, 'reRenderRecipient', bm),
     showAttachmentPreview: (dest: Bm.Dest, bm: Bm.ShowAttachmentPreview) => BrowserMsg.sendCatch(dest, 'show_attachment_preview', bm),
+    testAction: (dest: Bm.Dest) => BrowserMsg.sendCatch(dest, 'test_action', {}),
   };
   private static HANDLERS_REGISTERED_BACKGROUND: Handlers = {};
   private static HANDLERS_REGISTERED_FRAME: Handlers = {
