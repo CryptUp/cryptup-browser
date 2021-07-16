@@ -42,6 +42,12 @@ View.run(class PassphraseView extends View {
     if (!this.orgRules.forbidStoringPassPhrase()) {
       $('.forget').prop('disabled', false);
     }
+    if (this.orgRules.usesKeyManager()) {
+      $('#lost-pass-phrase').removeAttr('id').removeAttr('href');
+      $('.lost-pass-phrase-with-ekm').show();
+    } else {
+      $('.lost-pass-phrase').show();
+    }
     await initPassphraseToggle(['passphrase']);
     const allPrivateKeys = await KeyStore.get(this.acctEmail);
     this.keysWeNeedPassPhraseFor = allPrivateKeys.filter(ki => this.longids.includes(ki.longid));
