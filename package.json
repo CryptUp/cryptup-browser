@@ -48,7 +48,7 @@
     "node-forge": "0.10.0",
     "openpgp": "4.10.10",
     "squire-rte": "1.11.1",
-    "sweetalert2": "11.0.18",
+    "sweetalert2": "11.0.19",
     "zxcvbn": "4.4.2"
   },
   "scripts": {
