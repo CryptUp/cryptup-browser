@@ -13,6 +13,9 @@
       "typescript",
     ],
     "html.format.enable": false,
+    "htmlhint.options": {
+      "doctype-first": false
+    },
     "files.exclude": {
       "**/node_modules/**": true
     },
@@ -48,6 +51,7 @@
       "dbaeumer.vscode-eslint",
       "stylelint.vscode-stylelint",
       "ms-vscode.vscode-typescript-tslint-plugin",
+      "mkaufman.htmlhint",
       "philhindle.errorlens"
     ]
   }
