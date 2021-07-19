@@ -40,7 +40,7 @@ export class Attester extends Api {
    */
   public lookupFingerprint = async (fingerprintOrLongid: string) => {
     if (fingerprintOrLongid.includes('@')) {
-      return await this.lookupEmail(fingerprintOrLongid);
+      throw new Error('Expected fingerprint or longid, got email');
     }
     if (this.orgRules.disallowLookupOnAttester()) {
       console.info(`Skipping attester lookup because it is disabled for all domains.`);

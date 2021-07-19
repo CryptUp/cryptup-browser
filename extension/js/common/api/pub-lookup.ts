@@ -64,6 +64,9 @@ export class PubLookup {
   }
 
   public lookupFingerprint = async (fingerprintOrLongid: string): Promise<PubkeySearchResult> => {
+    if (fingerprintOrLongid.includes('@')) {
+      throw new Error('Expected fingerprint or longid, got email');
+    }
     if (this.keyManager) {
       const res = await this.keyManager.lookupPublicKey(fingerprintOrLongid);
       if (res.publicKeys.length) {
